@@ -273,16 +273,23 @@ export default function Beranda() {
                     </span>
                   )}
 
-                  <Link
-                    to={`/order-review/${order.id}`}
-                    className={`text-xs font-semibold px-4 py-2 rounded-lg transition-colors text-center ${
-                      order.rating
-                        ? "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                        : "bg-green-500 text-white hover:bg-green-600"
-                    }`}
-                  >
-                    {order.rating ? "Lihat Review" : "Beri Review"}
-                  </Link>
+                  {order.rating ? (
+                    // Jika order sudah memiliki rating → tampilkan tombol "Lihat Review"
+                    <Link
+                      to={`/detail-review/${order.id}`}
+                      className="text-xs font-semibold px-4 py-2 rounded-lg transition-colors text-center bg-gray-100 text-gray-600 hover:bg-gray-200"
+                    >
+                      Lihat Review
+                    </Link>
+                  ) : (
+                    // Jika order belum di-review → tampilkan tombol "Beri Review"
+                    <Link
+                      to={`/order-review/${order.id}`}
+                      className="text-xs font-semibold px-4 py-2 rounded-lg transition-colors text-center bg-green-500 text-white hover:bg-green-600"
+                    >
+                      Beri Review
+                    </Link>
+                  )}
                 </div>
               </div>
             ))}
