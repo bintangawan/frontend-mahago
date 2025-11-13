@@ -1,14 +1,29 @@
-import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Beranda from "./pages/Beranda";
+import Fitur from "./pages/Fitur";
+import Promo from "./pages/Promo";
+import Kontak from "./pages/Kontak";
+import Order from "./pages/Order";
+import CreateOrder from "./components/CreateOrder";
 
-function App() {
+export default function App() {
   return (
-    <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <p>Hello, Frontend Started Here!</p>
-      </div>
-    </>
+    <Router>
+      {/* Navbar ditampilkan di semua halaman */}
+      <Navbar />
+      <CreateOrder />
+
+      {/* Isi halaman */}
+      <main className="pt-16 pb-16">
+        <Routes>
+          <Route path="/" element={<Beranda />} />
+          <Route path="/fitur" element={<Fitur />} />
+          <Route path="/promo" element={<Promo />} />
+          <Route path="/kontak" element={<Kontak />} />
+          <Route path="/create-order" element={<Order />} />
+        </Routes>
+      </main>
+    </Router>
   );
 }
-
-export default App;
