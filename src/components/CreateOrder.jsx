@@ -1,7 +1,15 @@
 import { Plus } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function CreateOrder() {
+  const location = useLocation();
+
+  // ✅ Sembunyikan tombol di halaman login & register
+  const isAuthPage =
+    location.pathname === "/login" || location.pathname === "/register";
+
+  if (isAuthPage) return null; // Tidak render tombol sama sekali di halaman auth
+
   return (
     <>
       {/* 🖥️ Desktop Version */}

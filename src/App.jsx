@@ -1,12 +1,15 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Beranda from "./pages/Beranda";
-import Fitur from "./pages/Fitur";
+import Layanan from "./pages/Layanan";
 import Promo from "./pages/Promo";
-import Kontak from "./pages/Kontak";
+import Faq from "./pages/Faq";
 import Order from "./pages/Order";
 import Review from "./pages/Review";
 import DetailReview from "./pages/DetailReview";
+import DetailProfile from "./pages/DetailProfile";
+import Register from "./pages/auth/register";
+import Login from "./pages/auth/login";
 import CreateOrder from "./components/CreateOrder";
 
 export default function App() {
@@ -20,12 +23,15 @@ export default function App() {
       <main className="pt-16 pb-16">
         <Routes>
           <Route path="/" element={<Beranda />} />
-          <Route path="/fitur" element={<Fitur />} />
+          <Route path="/layanan" element={<Layanan />} />
           <Route path="/promo" element={<Promo />} />
-          <Route path="/kontak" element={<Kontak />} />
+          <Route path="/faq" element={<Faq />} />
           <Route path="/create-order" element={<Order />} />
           <Route path="/order-review/:id" element={<Review />} />
           <Route path="/detail-review/:id" element={<DetailReview />} />
+          <Route path="/detail-profile" element={<DetailProfile />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </main>
     </Router>
