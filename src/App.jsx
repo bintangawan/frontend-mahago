@@ -8,8 +8,8 @@ import Order from "./pages/Order";
 import Review from "./pages/Review";
 import DetailReview from "./pages/DetailReview";
 import DetailProfile from "./pages/DetailProfile";
-import Register from "./pages/auth/register";
-import Login from "./pages/auth/login";
+import Register from "./pages/auth/Register.jsx";
+import Login from "./pages/auth/Login.jsx";
 import CreateOrder from "./components/CreateOrder";
 
 export default function App() {
